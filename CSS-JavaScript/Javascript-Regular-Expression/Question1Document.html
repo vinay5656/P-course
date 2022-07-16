@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="Form"> 
+        <input type="text" onkeypress="return onlyNumbers(event)" />
+    </form>
+    <script>
+        function onlyNumbers(e){
+            let keynum;
+            let keychar;
+            let numcheck;
+            if(window.event){
+                keynum = e.keyCode;
+            } 
+            console.log("keynum :"+keynum);//keynum is respective assci value to key which is prassed
+            keychar = String.fromCharCode(keynum);
+            console.log(keychar);
+            numcheck =/\d/;
+            return numcheck.test(keychar);
+            // Using this we are only able to return the digit or avoided all character key
+        }
+    </script>
+</body>
+</html>

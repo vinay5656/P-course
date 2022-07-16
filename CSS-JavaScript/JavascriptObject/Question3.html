@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <form name="enterNumber">
+        <label for="enterNum">Enter only digits:</label>
+        <input type="text" name="number"/>
+        <br>
+        <input type="button" value="click here" onclick="removestr()"/>
+
+    </form>
+    <script>
+        let txt = "vinay singh chouhan";
+        document.querySelector('h1').textContent = txt;
+        function removestr(){
+            const number = document.enterNumber.number.value;
+            console.log(number);
+            if(number<=txt.length){
+                txt = txt.substring(0,txt.length-number);
+                console.log(txt);
+                document.querySelector('h1').textContent = txt;
+            }else{
+                document.querySelector('h1').textContent = "Enter number bigger then the string length";
+            }
+        }
+    </script>
+</body>
+</html>

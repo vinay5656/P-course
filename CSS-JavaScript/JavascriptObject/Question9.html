@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name ="form">
+        <label for="currentTime">Current Time: </label>
+        <input type="text" name="time" value="time">
+        <button class="btn">Stop Time</button>
+    </form>
+    
+    <script>
+        const currentTimw = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit',second:"2-digit" });
+        console.log(currentTimw);
+        //  setTimeout(function(){
+        //     const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        //     document.form.time.value = currentTime;
+        // },1000);
+        const intervel = setInterval(function(){
+            const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit',second:"2-digit" });
+            document.form.time.value = currentTime;
+        });
+
+        function stopIntervel(){
+            clearInterval(intervel);
+        }
+        document.querySelector('.btn').addEventListener('click',function(e){
+            e.preventDefault();
+            stopIntervel();
+            // console.log("Stop");
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="Form" onsubmit="passwordValide()">
+        <label for="password">Enter your strong password: </label>
+        <input type="text" name="password" onkeypress="return checkKey(event)"/>
+        <input type="submit" value="Submit">
+    </form>
+    
+    <script>
+        function checkKey(e){
+            let keynum;
+            let keychar;
+            let keyCheck;
+            if(window.event){
+                keynum = e.keyCode;
+            } 
+            console.log("keynum :"+keynum);//keynum is respective assci value to key which is prassed
+            keychar = String.fromCharCode(keynum);
+            console.log(keychar);
+            keyCheck =/[A-Z 0-9 a-z]/;
+            return keyCheck.test(keychar);
+        }
+
+        function passwordValide(){
+            const inputPassword = document.Form.password.value;
+            const Length =inputPassword.length;
+            console.log("Length: "+Length);
+
+            if(( Length > 6) && (Length < 20)){
+                document.write("Congratulations, You have generated your password.");
+            }else{
+                document.write("Your password length should be atleast 6.")
+            }
+
+        }
+
+    </script>
+</body>
+</html>

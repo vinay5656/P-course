@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color:greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <form name="Form">
+        <label for="string">Enter an string : </label>
+        <input type="text" name="inputString" id="inputString" oninput="changeToUpperCase()">
+    </form>
+    <h1></h1>
+    <script>
+        function changeToUpperCase(){
+            const inputString = document.Form.inputString.value;
+            // console.log(inputString);
+            // document.write(inputString.toUpperCase());
+            document.querySelector('h1').textContent = inputString.toUpperCase();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number</title>
+</head>
+<body>
+    <form name = "Form" action="mailto:vinaysinghchauhan5656@gmail.com" method="post" onsubmit="chkPhoneNumber()">
+        <label for="Phone-number">Enter your phone number: </label>
+        <input type="text" name="phoneNumber">
+        <input type="submit" value="Submit">
+    </form>
+   
+    <script>
+        function chkPhoneNumber(){
+        const phoneNumber = document.Form.phoneNumber.value;
+        if(phoneNumber.length != 10){
+            document.write("Phone number does not have 10 digit");
+        }else{
+            const pn = Number(document.Form.phoneNumber.value);
+            if(isNaN(pn)){
+                document.write("Please enter a valid mobile number");
+            }else{
+                const mobNumber = pn.toString();
+                document.write(mobNumber.slice(0,3)+"-"+mobNumber.slice(3,6)+"-"+mobNumber.slice(6,10));
+                document.write("<br>")
+                document.write(mobNumber.slice(0,3)+"."+mobNumber.slice(3,6)+"."+mobNumber.slice(6,10));
+                document.write("<br>")
+                document.write(mobNumber.slice(0,3)+" "+mobNumber.slice(3,6)+" "+mobNumber.slice(6,10));
+                document.write("<br>")
+            }
+        }
+      }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <form name="Form">
+        <label for="fNumber">Enter the first integer: </label>
+        <textarea name="fNumber" id="fNumber" cols="10" rows="1"></textarea><br><br>
+        <label for=sNumber"">Enter the second integer: </label>
+        <textarea name="sNumber" id="sNumber" cols="10" rows="1"></textarea><br><br>
+        <input type="button" value="Calculator" placeholder="Calculator" onclick="calculator()"><br>
+        <h1></h1>
+        <script>
+            function calculator() {
+                const firstNumber = parseInt(document.Form.fNumber.value);
+                const secondNumber = parseInt(document.Form.sNumber.value);
+                const sum = firstNumber+secondNumber;
+                console.log(sum);    
+                // document.write("Sum : "+sum);
+                document.querySelector('h1').textContent = "Sum : "+sum;
+            }
+            
+        </script>
+    </form>
+</body>
+</html>

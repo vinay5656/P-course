@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set two times width and three time hight</title>
+</head>
+<style>
+    
+    div{
+        background-color: aqua;
+        /*
+          We can also change height and width in style file
+           width: 2110px;
+           height: 54px;
+
+        */
+       
+    }
+</style>
+<body>
+    <!--By default the width of div element is width of containing element.
+        height of empty div is zero 
+        -->
+    <div></div>
+    
+    <script>
+        const div = document.querySelector('div');
+        let widthDefault = div.offsetWidth;
+        let heightDefault = div.offsetHeight;
+        console.log(widthDefault);
+        console.log(heightDefault);
+        const initailHeight = 18;
+       div.style.width = 2*widthDefault+"px";
+        div.style.height = 3*initailHeight+"px";
+        /**
+         * so we have calculate the default width and hight of div
+         * but as we can see that height is 0.
+         * so, to see any change let's take initial height 15px
+        */
+  
+    </script>
+</body>
+</html>
